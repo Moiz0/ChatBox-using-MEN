@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whatsapp</title>
+    <link rel=" stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h2>All Chats!</h2>
+    <form method="get" action="http://localhost:8080/chats/new">
+      <button>New Data!</button>
+    </form>
+    <br />
+    <% for (let chat of chats) { %>
+    <div class="chat">
+      <div class="from">
+        <p>From: <i> <%= chat.form %> </i></p>
+      </div>
+      <div class="msg">
+        <p><%= chat.msg %></p>
+      </div>
+      <div class="to">
+        <p>To: <i> <%= chat.to %> </i></p>
+      </div>
+      <hr />
+      <p>Time: <%= chat.created_at.toString().split(" ")[4] %></p>
+      <p>
+        Date: <%= chat.created_at.toString().split(" ").slice(0,4).join(" ") %>
+      </p>
+      <span>
+        <form method="get" action="/chats/<%= chat._id %>/edit">
+          <button>Edit!</button>
+        </form>
+        <form
+          id="deleteForm- <%= chat.id%>"
+          method="post"
+          action="/chats/<%= chat.id%>?_method=DELETE"
+        >
+          <button type="button" onclick="ConfirmDlt('<%= chat.id %>')">
+            Delete?
+          </button>
+        </form>
+        <script>
+          function ConfirmDlt(chatId) {
+            if (confirm("Are you sure You want to delete?")) {
+              document.getElementById(`deleteForm- ${chatId}`).submit();
+            }
+          }
+        </script>
+      </span>
+    </div>
+    <br />
+    <hr />
+    <%}%>
+  </body>
+</html>

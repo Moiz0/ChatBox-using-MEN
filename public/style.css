@@ -1,0 +1,82 @@
+ /* General Page Styling */
+ body {
+                 font-family: Arial, sans-serif;
+                 background-color: #f0f2f5;
+                 margin: 0;
+                 padding: 20px;
+                 text-align: center;
+ }
+
+ /* Heading */
+ h2 {
+                 color: #075e54;
+                 font-size: 28px;
+                 margin-bottom: 15px;
+ }
+
+ /* Button Styling */
+ button {
+                 background-color: #25d366;
+                 color: white;
+                 border: none;
+                 padding: 10px 15px;
+                 font-size: 16px;
+                 cursor: pointer;
+                 border-radius: 5px;
+                 transition: 0.3s;
+ }
+
+ button:hover {
+                 background-color: #1ebe5d;
+ }
+
+ /* Chat Container */
+ .chat {
+                 background-color: #ffffff;
+                 width: 50%;
+                 margin: 15px auto;
+                 padding: 15px;
+                 border-radius: 10px;
+                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+                 text-align: left;
+ }
+
+ /* Chat Message Bubble */
+ .msg {
+                 background-color: #dcf8c6;
+                 padding: 10px;
+                 border-radius: 10px;
+                 display: inline-block;
+                 max-width: 80%;
+                 word-wrap: break-word;
+ }
+
+ /* Chat Metadata */
+ .from,
+ .to {
+                 font-size: 14px;
+                 color: #555;
+ }
+
+ hr {
+                 border: 0;
+                 height: 1px;
+                 background-color: #ccc;
+                 margin: 10px 0;
+ }
+
+ /* Timestamp */
+ p {
+                 margin: 5px 0;
+ }
+
+ /* Action Buttons */
+ span {
+                 display: flex;
+                 justify-content: space-between;
+                 margin-top: 10px;
+ }
+
+ span form {
+                 display: inline;
+ }
